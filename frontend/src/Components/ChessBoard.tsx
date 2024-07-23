@@ -1,4 +1,4 @@
-import { Color, PieceSymbol, Square } from "chess.js";
+import { Chess, Color, Move, PieceSymbol, Square, SQUARES } from "chess.js";
 import { useState } from "react";
 
 export const MOVE = "move";
@@ -7,7 +7,7 @@ export const ChessBoard = ({ chess ,board , socket , setBoard} :{ setBoard:any;
                                                           chess : any;
                                                           board : ({ square : Square; type:PieceSymbol; color: Color} | null) [] []; 
                                                           socket :WebSocket }) => {
-    const [from , setFrom] = useState<null | Square>(null);
+    const [from , setFrom] = useState<null | Square>();
 
     return <div className="text-white-200">
                 {board.map((row, i) => {
