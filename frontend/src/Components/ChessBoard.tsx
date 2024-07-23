@@ -7,7 +7,7 @@ export const ChessBoard = ({ chess ,board , socket , setBoard} :{ setBoard:any;
                                                           chess : any;
                                                           board : ({ square : Square; type:PieceSymbol; color: Color} | null) [] []; 
                                                           socket :WebSocket }) => {
-    const [from , setFrom] = useState<null | Square>();
+    const [from , setFrom] = useState<null | Square>(null);
 
     return <div className="text-white-200">
                 {board.map((row, i) => {
